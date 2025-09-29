@@ -196,30 +196,6 @@ const BookingCalendar: React.FC = () => {
             )}
           </div>
         </div>
-
-        <div className="booking-features">
-          <div className="feature">
-            <span className="feature-icon">✅</span>
-            <div>
-              <h4>Instant Confirmation</h4>
-              <p>Receive immediate confirmation and calendar invitation</p>
-            </div>
-          </div>
-          <div className="feature">
-            <span className="feature-icon">🔄</span>
-            <div>
-              <h4>Automatic Sync</h4>
-              <p>Appointments sync directly with our calendar system</p>
-            </div>
-          </div>
-          <div className="feature">
-            <span className="feature-icon">📧</span>
-            <div>
-              <h4>Email Reminders</h4>
-              <p>Get reminded 24 hours before your appointment</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
