@@ -18,11 +18,55 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  
+  if (!validateForm()) {
+    return;
+  }
+
+  setIsSubmitting(true);
+  setSubmitStatus('idle');
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...formData,
+        timestamp: new Date().toISOString(),
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      throw new Error(result.error || 'Failed to send message');
+    }
+
+    setSubmitStatus('success');
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: '',
+      message: ''
+    });
+
+    // Auto-hide success message after 5 seconds
+    setTimeout(() => {
+      setSubmitStatus('idle');
+    }, 5000);
+
+  } catch (error) {
+    console.error('Contact form error:', error);
+    setSubmitStatus('error');
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <section id="contact" className="contact">
