@@ -129,46 +129,51 @@ const BookingCalendar: React.FC = () => {
   };
 
   return (
-    <section id="booking" className="booking-calendar">
-      <div className="booking-container">
-        <div className="booking-header">
-          <p className="booking-tagline">Schedule Appointment</p>
-          <h2 className="booking-title">Book Your Consultation</h2>
-          <p className="booking-subtitle">
-            Select your preferred date and time for a professional consultation.
-            Each session is 60 minutes.
-          </p>
-        </div>
+   <section id="booking" className="booking-calendar">
+  <div className="booking-container">
+    <div className="booking-header">
+      <p className="booking-tagline">Programar cita</p>
+      <h2 className="booking-title">Reserve su consulta</h2>
+      <p className="booking-subtitle">
+        Seleccione la fecha y hora de su preferencia para una consulta profesional.
+        Cada sesión tiene una duración de 60 minutos.
+      </p>
+    </div>
 
-        <div className="booking-content">
-          <div className="calendar-section">
-            <CalendarView
-              selectedDate={selectedDate}
-              onDateSelect={handleDateSelect}
-              bookings={bookings}
-            />
-            
-            {selectedDate && (
-              <div className="booking-info">
-                <h3>Selected Date</h3>
-                <p>{selectedDate.toLocaleDateString('en-US', { 
-                  weekday: 'long', 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric' 
-                })}</p>
-              </div>
-            )}
+    <div className="booking-content">
+      <div className="calendar-section">
+        <CalendarView
+          selectedDate={selectedDate}
+          onDateSelect={handleDateSelect}
+          bookings={bookings}
+        />
+        
+        {selectedDate && (
+          <div className="booking-info">
+            <h3>Fecha seleccionada</h3>
+            <p>{selectedDate.toLocaleDateString('es-ES', { 
+              weekday: 'long', 
+              year: 'numeric', 
+              month: 'long', 
+              day: 'numeric' 
+            })}</p>
           </div>
+        )}
+      </div>
 
-          <div className="selection-section">
-            {currentStep === 'date' && (
-              <div className="selection-placeholder">
-                <span className="placeholder-icon">📅</span>
-                <h3>Select a Date</h3>
-                <p>Choose your preferred date from the calendar to view available time slots.</p>
-              </div>
-            )}
+      <div className="selection-section">
+        {currentStep === 'date' && (
+          <div className="selection-placeholder">
+            <span className="placeholder-icon">📅</span>
+            <h3>Seleccione una fecha</h3>
+            <p>Elija la fecha de su preferencia en el calendario para ver los horarios disponibles.</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>
+
 
             {currentStep === 'time' && selectedDate && (
               <TimeSlotPicker
