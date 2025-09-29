@@ -95,49 +95,48 @@ const Contact: React.FC = () => {
     <section id="contact" className="contact">
       <div className="contact-container">
         <div className="section-header">
-          <p className="section-tagline">Get In Touch</p>
-          <h2 className="section-title">Let's Discuss Your Financial Goals</h2>
+          <p className="section-tagline">Encuesta de contacto</p>
+          <h2 className="section-title">Contáctenos para hablar sobre sus finanzas</h2>
         </div>
         
         <div className="contact-content">
           <div className="contact-info">
-            <h3>Contact Information</h3>
+            <h3>Información adicional</h3>
             <p className="contact-intro">
-              We're here to help you achieve financial success. Reach out to schedule
-              a consultation or to learn more about our services.
+             Estamos aquí para ayudarle a alcanzar el éxito financiero. Contáctenos para programar una consulta o para conocer más sobre nuestros servicios.
             </p>
             
             <div className="info-items">
               <div className="info-item">
                 <span className="info-icon">📍</span>
                 <div>
-                  <h4>Office Location</h4>
-                  <p>[Your Address]<br/>[City, State ZIP]</p>
+                  <h4>Localización de oficina</h4>
+                  <p>29 C. Cristina<br/>Ponce, Puerto Rico 00730</p>
                 </div>
               </div>
               
               <div className="info-item">
                 <span className="info-icon">📞</span>
                 <div>
-                  <h4>Phone Number</h4>
-                  <p>[Phone Number]</p>
+                  <h4>Número de teléfono</h4>
+                  <p>+1 (939) 608-3732</p>
                 </div>
               </div>
               
               <div className="info-item">
                 <span className="info-icon">✉️</span>
                 <div>
-                  <h4>Email Address</h4>
-                  <p>alexisbarriera72@gmail.com</p>
+                  <h4>Email:</h4>
+                  <p>shaddaietp@gmail.com</p>
                 </div>
               </div>
               
               <div className="info-item">
                 <span className="info-icon">🕒</span>
                 <div>
-                  <h4>Business Hours</h4>
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM<br/>
-                     Saturday: By Appointment</p>
+                  <h4>Horas de oficina:</h4>
+                  <p>Lunes - Viernes: 8:30 AM - 5:00 PM<br/>
+                     Sábado (PHP solo): 10:00 AM - 1:00 PM</p>
                 </div>
               </div>
             </div>
@@ -148,8 +147,8 @@ const Contact: React.FC = () => {
               <div className="form-message success">
                 <span className="message-icon">✅</span>
                 <div>
-                  <strong>Message Sent Successfully!</strong>
-                  <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+                  <strong>Mensaje fue enviado sucesivamente!</strong>
+                  <p>Gracias por contactarnos. Nos pondremos en contacto con usted lo antes posible.</p>
                 </div>
               </div>
             )}
@@ -158,15 +157,15 @@ const Contact: React.FC = () => {
               <div className="form-message error">
                 <span className="message-icon">❌</span>
                 <div>
-                  <strong>Failed to Send Message</strong>
-                  <p>Please try again or contact us directly via phone or email.</p>
+                  <strong>Mensaje no pudo ser enviado</strong>
+                  <p>Por favor, intente de nuevo o contáctenos directamente por teléfono o correo electrónico.</p>
                 </div>
               </div>
             )}
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="name">Full Name *</label>
+                <label htmlFor="name">Nombre completo *</label>
                 <input
                   type="text"
                   id="name"
@@ -174,7 +173,7 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="John Doe"
+                  placeholder="Nombre & Apellido"
                   disabled={isSubmitting}
                   className={errors.name ? 'error' : ''}
                 />
@@ -182,7 +181,7 @@ const Contact: React.FC = () => {
               </div>
               
               <div className="form-group">
-                <label htmlFor="email">Email Address *</label>
+                <label htmlFor="email">Email *</label>
                 <input
                   type="email"
                   id="email"
@@ -190,7 +189,7 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="john@example.com"
+                  placeholder="email@example.com"
                   disabled={isSubmitting}
                   className={errors.email ? 'error' : ''}
                 />
@@ -200,20 +199,20 @@ const Contact: React.FC = () => {
             
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone">Número de teléfono</label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="(555) 123-4567"
+                  placeholder="(123) 456-7890"
                   disabled={isSubmitting}
                 />
               </div>
               
               <div className="form-group">
-                <label htmlFor="service">Service Interest</label>
+                <label htmlFor="service">Servicio de interés</label>
                 <select
                   id="service"
                   name="service"
@@ -221,20 +220,21 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   disabled={isSubmitting}
                 >
-                  <option value="">Select a service</option>
-                  <option value="tax-preparation">Tax Preparation</option>
-                  <option value="bookkeeping">Bookkeeping</option>
-                  <option value="financial-planning">Financial Planning</option>
-                  <option value="business-consulting">Business Consulting</option>
-                  <option value="audit-services">Audit Services</option>
-                  <option value="payroll-services">Payroll Services</option>
-                  <option value="other">Other</option>
+                  <option value="">Seleccione un servicio</option>
+                  <option value="tax-preparation">Preparación de impuestos</option>
+                  <option value="bookkeeping">Contabilidad</option>
+                  <option value="financial-planning">Planificación financiera</option>
+                  <option value="business-consulting">Consultoría empresarial</option>
+                  <option value="audit-services">Servicios de auditoría</option>
+                  <option value="payroll-services">Servicios de nómina</option>
+                  <option value="other">Otro</option>
+
                 </select>
               </div>
             </div>
             
             <div className="form-group">
-              <label htmlFor="message">Message *</label>
+              <label htmlFor="message">Mensaje *</label>
               <textarea
                 id="message"
                 name="message"
@@ -242,7 +242,7 @@ const Contact: React.FC = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                placeholder="Tell us about your accounting needs..."
+                placeholder="Cuéntenos sobre sus necesidades contables"
                 disabled={isSubmitting}
                 className={errors.message ? 'error' : ''}
               />
