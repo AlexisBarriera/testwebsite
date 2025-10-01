@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Hero from './components/Hero/Hero';
@@ -7,6 +6,7 @@ import Services from './components/Services/Services';
 import BookingCalendar from './components/BookingCalendar/BookingCalendar';
 import Contact from './components/Contact/Contact';
 import NavigationTabs from './components/NavigationTabs/NavigationTabs';
+import AIChatWidget from './components/AIChatWidget/AIChatWidget';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,6 +28,7 @@ function App() {
       <Services />
       <BookingCalendar />
       <Contact />
+      <AIChatWidget />
     </div>
   );
 }
